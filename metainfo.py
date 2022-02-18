@@ -140,7 +140,7 @@ La foto ha sido guardada correctamente en {ruta_origin}""")
         os.system(f"rm {nombreimg_modificar}")
         print("\033[0;31m")
         print("""
-La foto original se ha boreado""")
+La foto original se ha borrado""")
 
 elif num =="3":
     print("""
@@ -165,7 +165,26 @@ elif num =="3":
     print("\033[0;34m")
     nombreimg_borrar=input("Introduce el nombe del archivo: ")
     
-    os.system("exiftool -all="+ nombreimg_borrar)
+    os.system("exiftool -all= "+ nombreimg_borrar)
+
+    y_n=input("""
+¿Quieres guardar una copia original de la foto?(y/n)
+
+""")
+
+    if y_n=="y":
+        os.system(f"mv {nombreimg_borrar}_original fotos_originales")
+        print("\033[0;32m")
+        ruta_origin=os.popen("pwd").read()
+        ruta_origin=ruta_origin+"fotos originales"
+        print(f"""
+La foto ha sido guardada correctamente en {ruta_origin}""")
+
+    elif y_n=="n":
+        os.system(f"rm {nombreimg_borrar}")
+        print("\033[0;31m")
+        print("""
+La foto original se ha borrado""")
 
 elif num =="4":
 
