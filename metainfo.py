@@ -21,6 +21,13 @@ def instalar():
     os.system("pkg install exiftool")
     os.system("pkg install perl")
 
+def lista():
+    print("\033[0;33m")
+    print("-----------------------")
+    print("Archivos disponibles: ")
+    os.system("ls *.jpg")
+    print("-----------------------")
+
 limpiar()
 
 print("\033[0;35m"+"""
@@ -31,7 +38,7 @@ print("\033[0;35m"+"""
 ██║╚██╔╝██║██╔══╝░░░░░██║░░░██╔══██║██║██║╚████║██╔══╝░░██║░░██║
 ██║░╚═╝░██║███████╗░░░██║░░░██║░░██║██║██║░╚███║██║░░░░░╚█████╔╝
 ╚═╝░░░░░╚═╝╚══════╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░░░░░╚════╝░
-Version-1.0
+Version-1.1
 """)
    
 print("\033[0;33m"+"""
@@ -63,12 +70,13 @@ if num =="1":
 ║║║║║║║═╣║║╔╗║╔╗║╔╗║║║╔╗║══╣
 ║║║║║║║═╣╚╣╔╗║╚╝║╔╗║╚╣╚╝╠══║
 ╚╝╚╝╚╩══╩═╩╝╚╩══╩╝╚╩═╩══╩══╝ """)
+    lista()
     print("\033[0;34m")
     nombreimg_extraer=input("Introduzca la el nombre del archivo: ")
 
     limpiar()
 
-    print("\033[0;32m\]")
+    print("\033[0;32m")
     os.system("exiftool -S "+nombreimg_extraer)
 
 elif num=="2":
@@ -83,6 +91,7 @@ Etiqueta/Tag - """+tag+"""
 
 Comentario - """+comment)
 
+    lista()
     print("\033[0;34m")
     nombreimg_modificar=input("""
 Introduzca el nombre del archivo: """)
@@ -100,6 +109,7 @@ Etiqueta/Tag - """+tag+"""
 
 Comentario - """+comment)
 
+    lista()
     print("\033[0;34m")    
     comment=input("""
 Introduce el comentario: """)
@@ -117,6 +127,7 @@ Etiqueta/Tag - """+tag+"""
 
 Comentario - """+comment)
 
+    lista()
     print("\033[0;34m")
     input("""
 Pulsa enter para continuar
@@ -143,6 +154,7 @@ La foto ha sido guardada correctamente en {ruta_origin}""")
 La foto original se ha borrado""")
 
 elif num =="3":
+    print("\033[0;35m")
     print("""
 
 ╔══╗
@@ -158,6 +170,7 @@ elif num =="3":
 ║║║║║║║═╣╚╣╔╗║╚╝║╔╗║╚╣╚╝╠══║
 ╚╝╚╝╚╩══╩═╩╝╚╩══╩╝╚╩═╩══╩══╝
 """)
+    lista()
     
     print("\033[0;31m")
     print("""SE BORRARAN TODOS LOS METADATOS
